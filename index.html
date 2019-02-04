@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<!-- Three mandatory meta tags when using Bootstrap -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<!-- My custom stylesheet -->
+	<link rel="stylesheet" href="css/main.css">
+	<title>D3 and Responsive Design</title>
+</head>
+
+<body>
+	<div class="container" style="max-width: 1400px;">
+		<!-- Title across the entire container -->
+		<div style="text-align: center;">
+		<h1>Household waste in Scotland Choropleth Map</h1>
+		<p>Built using D3 charting library and responsive Bootstrap grid</p>
+		</div>
+		<div class="row">
+			<!-- Max container width for SM is smaller than for MD; once SM column span reaches its maximum, it will shift down -->
+			<div class="col-md-6 d-flex align-content-center flex-wrap justify-content-center">
+				<!--Create a static dropdown menu to drive the visualisation. -->
+				<div class="dropdown">
+					<button class="dropbtn">Please select a year</button>
+						<div class="dropdown-content">
+							<a id="btn_2017" href='javascript:void();'>2017</a>
+							<a id="btn_2016" href='javascript:void();'>2016</a>
+							<a id="btn_2015" href='javascript:void();'>2015</a>
+						</div>
+				</div>
+				<div class="measures">
+					<button class="measures_button active" id="btn_recycled">Recycled tonnes per person</button><!--
+					--><button class="measures_button" id="btn_generated">Generated tonnes per person</button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<p id="right_hand_text">
+					Right-hand side text that shifts down on mobile, but not on tablet.Right-hand side text that shifts down on mobile, but not on tablet.Right-hand side text that shifts down on mobile, but not on tablet.
+				</p>
+			</div>
+
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Create DIVs inside rows inside containers that D3 will target with its Selects -->
+				<div id="map_chart"></div>
+				<div id="map_tooltip" class="hidden">
+					<p><strong>Tooltip label</strong></p>
+					<p><span id="map_tooltip_value">placeholder</span></p>	
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div id="bar_chart"></div>
+				<div>
+					<p>
+						Organic portland tattooed selfies normcore farm-to-table wayfarers flannel vexillologist. Street art 3 wolf moon bicycle rights church-key raw denim asymmetrical pork belly scenester. Vape art party slow-carb pop-up leggings hell of typewriter cray stumptown yr kitsch cold-pressed mumblecore fixie umami. Cronut iceland biodiesel snackwave organic letterpress ugh iPhone typewriter marfa. Vaporware williamsburg selfies, blue bottle knausgaard poutine fingerstache organic. Sriracha fashion axe literally af you probably haven't heard of them beard.
+
+					</p>
+					<p>
+						Heirloom fashion axe pabst chillwave pickled taiyaki biodiesel selvage cronut brunch tbh vexillologist dreamcatcher vinyl flexitarian. Pickled taiyaki fingerstache, hell of raw denim pug occupy sartorial. Adaptogen skateboard bicycle rights, woke bushwick art party craft beer intelligentsia tousled. Migas tbh poutine, humblebrag VHS keytar activated charcoal. Synth iPhone cold-pressed before they sold out, plaid sartorial drinking vinegar VHS XOXO photo booth pinterest chillwave bitters. Occupy hella meh leggings lo-fi paleo.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 order-sm-2 order-md-1 d-flex align-items-start">
+					<p>
+						Organic portland tattooed selfies normcore farm-to-table wayfarers flannel vexillologist. Street art 3 wolf moon bicycle rights church-key raw denim asymmetrical pork belly scenester. Vape art party slow-carb pop-up leggings hell of typewriter cray stumptown yr kitsch cold-pressed mumblecore fixie umami. Cronut iceland biodiesel snackwave organic letterpress ugh iPhone typewriter marfa. Vaporware williamsburg selfies, blue bottle knausgaard poutine fingerstache organic. Sriracha fashion axe literally af you probably haven't heard of them beard.
+					</p>
+			</div>
+			<div class="col-md-6 order-sm-1 order-md-2 d-flex align-items-center">
+				<div id="scatter_chart"></div>
+				<div id="scatter_tooltip" class="hidden">
+					<p><strong>Tooltip label</strong></p>
+					<p id="scatter_tooltip_value">placeholder</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="js/topojson-client.min.js"></script>
+<script src="js/d3_map.js"></script>
+<script src="js/d3_bar.js"></script>
+<script src="js/d3_scatter.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
