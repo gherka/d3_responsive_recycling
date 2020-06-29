@@ -31,9 +31,9 @@ var yAxis = d3.axisLeft()
 //TOOLTIP FUNCTIONS
 function mouseover_func(context, d) { 
 
-//TOOLTIP
-var xPosition = parseFloat(d3.mouse(context)[0]);
-var yPosition = parseFloat(d3.mouse(context)[1]);
+// TOOLTIP
+var xPosition = parseFloat(d3.event.clientX);
+var yPosition = parseFloat(d3.event.clientY) - 75;
 
 d3.select("#scatter_tooltip")
     .style("left", xPosition + "px")

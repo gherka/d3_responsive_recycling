@@ -37,13 +37,11 @@ function mouseover_func(context, d) {
 		});
 
 
-	//TOOLTIP
-	var xPosition = parseFloat(d3.mouse(context)[0]);
-	var yPosition = parseFloat(d3.mouse(context)[1]);
-
+	//TOOLTIP - always in top left corner of the map
+	// var xPosition = parseFloat(d3.mouse(context)[0]) - 10;
+	// var yPosition = parseFloat(d3.mouse(context)[1]) - 10;
+	
 	d3.select("#map_tooltip")
-		.style("left", xPosition + "px")
-		.style("top", yPosition + "px")
 		.select("#map_tooltip_value")
 		.text(d.properties.Value);
 
