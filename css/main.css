@@ -50,9 +50,10 @@ main {
 
 /* DROPDOWN */
 .dropbtn {
+    width: 190px;
     margin: 1px;
-    padding: 10px 20px;
-    text-align: center;
+    padding: 10px 15px;
+    text-align: left;
     background-color: dimgray;
     color: white;
     font-size: 100%;

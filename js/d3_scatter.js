@@ -242,8 +242,7 @@ viz.updateScatter = function() {
         .attr('r', 5)
         .attr('transform', `translate(${margin.left}, ${margin.top})`)
         .attr('fill', 'teal')
-        .on("mouseover", function(d) { return mouseover_func(this, d); } )
-        .on("mouseout", function(d) { return mouseout_func(); });
+
     
     //RE-DRAW AXES AND AXES LABELS
     svgContainer

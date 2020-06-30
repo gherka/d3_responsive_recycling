@@ -25,22 +25,19 @@ var color = d3.scaleQuantize()
 function mouseover_func(context, d) { 
 	//HIGHLIGHTING
 	d3.selectAll("[class*=mycharts_bars").attr("fill", function(e) {				
-		return d.properties.NAME === e.LA  ? "pink" : "grey";
+		return d.properties.NAME === e.LA  ? "#db8390" : "#f4f4f4";
 		});
 
 	d3.selectAll("[class*=mycharts_map").attr("fill", function(e) {				
-		return d.properties.NAME === e.properties.NAME  ? "pink" : "grey";
+		return d.properties.NAME === e.properties.NAME  ? "#db8390" : "#f4f4f4";
 		});
 
 	d3.selectAll("circle").attr("fill", function(e) {				
-		return d.properties.NAME === e.LA  ? "pink" : "grey";
+		return d.properties.NAME === e.LA  ? "#db8390" : "#f4f4f4";
 		});
 
 
 	//TOOLTIP - always in top left corner of the map
-	// var xPosition = parseFloat(d3.mouse(context)[0]) - 10;
-	// var yPosition = parseFloat(d3.mouse(context)[1]) - 10;
-	
 	d3.select("#map_tooltip")
 		.select("#map_tooltip_value")
 		.text(d.properties.Value);

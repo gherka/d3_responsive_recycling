@@ -31,6 +31,8 @@ viz.updateAll = function() {
 };
 
 //ADD VARIABLES TO TRACK INTERACTIVE ELEMENTS
+var dropdown_button = document.querySelector(".dropbtn");
+var dropdown = document.querySelector(".dropdown");
 var button_2017 = document.getElementById("btn_2017");
 var button_2016 = document.getElementById("btn_2016");
 var button_2015 = document.getElementById("btn_2015");
@@ -38,9 +40,20 @@ var button_recycled = document.getElementById("btn_recycled");
 var button_generated = document.getElementById("btn_generated");
 
 //ADD EVENT LISTENERS TO EACH INTERACTIVE ELEMENT
+dropdown_button.addEventListener("mouseover", function() {
+
+    dropdown_button.innerHTML = "Please select a year";
+})
+
+dropdown.addEventListener("mouseleave", function() {
+
+    dropdown_button.innerHTML = `Year: ${viz.selectedYear}`;
+})
+
 button_2017.addEventListener('click', function() {
 
     viz.selectedYear = '2017';
+    dropdown_button.innerHTML = `Year: ${viz.selectedYear}`;
     viz.updateAll();
 
 });  
@@ -48,6 +61,7 @@ button_2017.addEventListener('click', function() {
 button_2016.addEventListener('click', function() {
     
     viz.selectedYear = '2016';
+    dropdown_button.innerHTML = `Year: ${viz.selectedYear}`;
     viz.updateAll();
 
 });  
@@ -55,6 +69,7 @@ button_2016.addEventListener('click', function() {
 button_2015.addEventListener('click', function() {
     
     viz.selectedYear = '2015';
+    dropdown_button.innerHTML = `Year: ${viz.selectedYear}`;
     viz.updateAll();
 
 });
