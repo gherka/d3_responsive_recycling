@@ -1,2 +1,4 @@
 # Responsive, mobile-first household waste dashboard
-A basic interactive template with a map, a bar chart and a scatter plot, built using D3.js.
+Responsive dashboard template including a choropleth map of Scotland, a scatterplot with dynamic quadrants and a bar chart, built using D3.js.
+
+![](img/screenshot.png?raw=true)
